@@ -24,6 +24,11 @@ const Page = ({ state, actions, libraries }) => {
   useEffect(() => {
     actions.source.fetch("/");
     List.preload();
+
+    if (document.getElementById('english')) {
+      document.getElementById('english').onclick = () => localStorage.setItem('lang', 'en')
+      document.getElementById('finnish').onclick = () => localStorage.setItem('lang', 'fi')
+    }
   }, []);
 
   // Load the post, but only if the data is ready.
