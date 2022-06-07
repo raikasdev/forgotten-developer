@@ -52,7 +52,7 @@ const Post = ({ state, actions, libraries }) => {
               */}
               <DateWrapper>
                 {" "}
-                Naputeltu <b>{date.toDateString().replace(/^\S+\s/,'')}</b>
+                Naputeltu <b>{date.toLocaleString('fi')}</b>
               </DateWrapper>
               <PublishIn>
                 {" aiheesta "}

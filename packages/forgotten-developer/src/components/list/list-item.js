@@ -37,7 +37,7 @@ const Item = ({ state, item, isTaxonomy }) => {
         )}
 */}
         <PublishDate>
-          Naputeltu <b>{date.toDateString().replace(/^\S+\s/,'')}</b>
+          Naputeltu <b>{date.toLocaleString('fi')}</b>
         </PublishDate>
         { !isTaxonomy && <PublishIn>
           {" aiheesta "}
