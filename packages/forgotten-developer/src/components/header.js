@@ -130,7 +130,7 @@ const LogoGroup = styled.div`
 `;
 
 const LogoIcon = styled.span`
-  margin-right: 4px;
+  margin-right: 10px;
   animation: blinker 0.8s step-start infinite;
 `;
 
