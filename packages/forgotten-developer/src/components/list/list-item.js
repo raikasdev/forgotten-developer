@@ -18,6 +18,9 @@ const Item = ({ state, item, isTaxonomy }) => {
   const category = state.source.category[item.categories[0]]
   // Get the date of the post.
   const date = new Date(item.date);
+  const dateArr = date.toLocaleString('fi').split('.');
+  dateArr.pop();
+  const dateStr = dateArr.join('.');
   return (
     <article>
       <Title>
@@ -37,7 +40,7 @@ const Item = ({ state, item, isTaxonomy }) => {
         )}
 */}
         <PublishDate>
-          Naputeltu <b>{date.toLocaleString('fi')}</b>
+          Naputeltu <b>{dateStr}</b>
         </PublishDate>
         { !isTaxonomy && <PublishIn>
           {" aiheesta "}

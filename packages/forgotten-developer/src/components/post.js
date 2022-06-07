@@ -13,6 +13,9 @@ const Post = ({ state, actions, libraries }) => {
   const author = state.source.author[post.author];
   // Get a human readable date.
   const date = new Date(post.date);
+  const dateArr = date.toLocaleString('fi').split('.');
+  dateArr.pop();
+  const dateStr = dateArr.join('.');
   // Get the data of the category.
   const category = state.source.category[post.categories[0]]
   // Get the theme color.
@@ -52,7 +55,7 @@ const Post = ({ state, actions, libraries }) => {
               */}
               <DateWrapper>
                 {" "}
-                Naputeltu <b>{date.toLocaleString('fi')}</b>
+                Naputeltu <b>{dateStr}</b>
               </DateWrapper>
               <PublishIn>
                 {" aiheesta "}
