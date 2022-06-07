@@ -38,7 +38,7 @@ const Theme = ({ state, actions }) => {
         }
       }
     }
-  }, []);
+  });
 
   return (
     <>
