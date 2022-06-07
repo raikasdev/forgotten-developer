@@ -30,7 +30,7 @@ const Theme = ({ state, actions }) => {
         if (!lang.includes("fi")) {
           if (localStorage.getItem('lang') === 'fi' && state.router.link.startsWith('/en')) {
             actions.router.set("/");
-          } else if (localStorage.getItem('lang') === 'en') {
+          } else if (localStorage.getItem('lang') === 'en' && !state.router.link.endsWith('#reset-language')) {
             window.location = "https://en.raikas.dev";
           } else if (localStorage.getItem('lang') !== 'fi') {
             actions.router.set("/en");
