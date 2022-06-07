@@ -26,7 +26,7 @@ const Header = ({ state }) => {
           </LogoText>
         </LogoGroup>
 
-        {!data.isHome && (
+        {!data.isHome && !data.isError && !data.isFetching && (
             <>
               <StickyPostTitleSeparator>/</StickyPostTitleSeparator>
               {/* If the list is a taxonomy, we render a title. */}
@@ -44,7 +44,7 @@ const Header = ({ state }) => {
               )}
 
               {/* Show sticky post title for the post page*/}
-              {data.isPost && (
+              {(data.isPost || data.isPage ) && (
                 <StickyPostTitle
                   dangerouslySetInnerHTML={{ __html: state.source[data.type][data.id].title.rendered }}
                 />

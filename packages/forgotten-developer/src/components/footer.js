@@ -1,19 +1,12 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import { FaCode, FaCircle } from "react-icons/fa";
-import { GiHeartOrgan } from "react-icons/gi";
-import { GiBrain } from "react-icons/gi";
-import ColorTheme from "./theme";
 
 
-const Footer = ({state, actions}) => {
-  // Get the theme color.
-  const { themeColor } = state.theme.colors;
-
+const Footer = () => {
     return (
         <Container>
             <FooterText>
-              <FaCode color={themeColor} style={{ marginBottom: "-2px" }} /> with <GiHeartOrgan color="red" style={{ marginBottom: "-2px" , animation: "pulsate 1.4s linear infinite" }} /> and <GiBrain color={themeColor=="red" ? "red" : "pink" } style={{ marginBottom: "-2px" }} /> by Divaksh
+              Copyright &copy; 2022 Roni Äikäs. All rights reserved. <a href="https://github.com/raikasdev/forgotten-developer">Theme licensed under GPLv2</a>.
             </FooterText>
         </Container>
       );

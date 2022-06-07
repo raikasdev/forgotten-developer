@@ -1,7 +1,6 @@
 import React from "react";
 import { styled, connect } from "frontity";
 import Link from "./link";
-import ColorTheme from "./theme";
 
 const MenuModal = ({ state, actions }) => {
   const { menu } = state.theme;
@@ -13,7 +12,6 @@ const MenuModal = ({ state, actions }) => {
     <>
       <MenuOverlay />
       <MenuContent as="nav">
-      <ColorTheme />
         {isThereLinks &&
           menu.map(([name, link]) => (
             <MenuLink

@@ -20,7 +20,7 @@ const List = ({ state }) => {
       {/* If the list is for a specific author, we render a title. */}
       {data.isAuthor && (
         <Header>
-          Author: <b>{decode(state.source.author[data.id].name)}</b>
+          Naputellut <b>{decode(state.source.author[data.id].name)}</b>
         </Header>
       )}
 

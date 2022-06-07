@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Global, connect, Head } from "frontity";
 import Switch from "@frontity/components/switch";
 import globalStyles from "./styles/global-styles";
@@ -12,6 +12,9 @@ import PageError from "./page-error";
 import Nav from "./nav";
 import Footer from "./footer";
 
+import "../assets/dracula-prism.min.css";
+import "../assets/font.css";
+import Page from "./page";
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -20,6 +23,17 @@ import Footer from "./footer";
 const Theme = ({ state, actions }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  console.log(data);
+  useEffect(() => {
+    if (navigator != null) {
+      if (navigator.language || navigator.userLanguage) {
+        const lang = navigator.language || navigator.userLanguage;
+        if (!lang.includes("fi")) {
+          //actions.router.set("/en");
+        }
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -27,20 +41,13 @@ const Theme = ({ state, actions }) => {
       <Title />
       <Head>
         <meta name="description" content={state.frontity.description} />
-        <html lang="en" />          
+        <html lang="fi" />          
       </Head>
 
       
       {/* Add some global styles for the whole site, like body or a's. 
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
       <Global styles={globalStyles(state.theme.colors)} />
-      <link
-          href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-          rel="stylesheet"
-      ></link>
-
-      {/* Styling for Syntax Highlighting*/}
-      <link rel="stylesheet" href="https://unpkg.com/dracula-prism/css/dracula-prism.css" />
 
       {/* Main container of the site that contains everything in the page. */}
       <div id="container">
@@ -56,6 +63,7 @@ const Theme = ({ state, actions }) => {
               <Switch>
                 <Loading when={data.isFetching} />
                 <List when={data.isArchive} />
+                <Page when={data.isPage} />
                 <Post when={data.isPostType} />
                 <PageError when={data.isError} />
               </Switch>

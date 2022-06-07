@@ -37,10 +37,10 @@ const Item = ({ state, item }) => {
         )}
 */}
         <PublishDate>
-          Compiled on <b>{date.toDateString().replace(/^\S+\s/,'')}</b>
+          Naputeltu <b>{date.toDateString().replace(/^\S+\s/,'')}</b>
         </PublishDate>
         <PublishIn>
-          {" in "}
+          {" aiheesta "}
           <StyledLink link={category.link}>
             <CategoryName>
               <b>{category.name}</b>
@@ -74,7 +74,7 @@ const Title = styled.h1`
   padding-bottom: 8px;
   box-sizing: border-box;
 
-  && ::before {
+  && a::before {
     font-size: 26px;
     color: #fff;
     content: "cd ";
@@ -84,7 +84,7 @@ const Title = styled.h1`
     transition: letter-spacing 0.3s ease-out, opacity 0.3s ease-out;
     text-decoration: none;
   }
-  && :hover::before {
+  && a:hover::before {
     text-indent: 0px;
     letter-spacing: normal;
     opacity: 1;

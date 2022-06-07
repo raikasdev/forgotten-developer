@@ -4,20 +4,15 @@ import Link from "./link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
 
-const Post = ({ state, actions, libraries }) => {
+const Page = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
   // Get the data of the post.
   const post = state.source[data.type][data.id];
-  // Get the data of the author.
-  const author = state.source.author[post.author];
-  // Get a human readable date.
-  const date = new Date(post.date);
-  // Get the data of the category.
-  const category = state.source.category[post.categories[0]]
+
+  console.log(post);
   // Get the theme color.
   const { themeColor } = state.theme.colors;
-
 
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
@@ -37,33 +32,7 @@ const Post = ({ state, actions, libraries }) => {
     <>
       <Container>
         <div>
-        <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-
-          {/* Only display author and date on posts */}
-          {data.isPost && (
-            <div>
-              {/*}              {author && (
-                <StyledLink link={author.link}>
-                  <Author>
-                    By <b>{author.name}</b>
-                  </Author>
-                </StyledLink>
-              )}
-              */}
-              <DateWrapper>
-                {" "}
-                Naputeltu <b>{date.toDateString().replace(/^\S+\s/,'')}</b>
-              </DateWrapper>
-              <PublishIn>
-                {" aiheesta "}
-                <StyledLink link={category.link}>
-                  <CategoryName>
-                    <b>{category.name}</b>
-                  </CategoryName>
-                </StyledLink>
-              </PublishIn>
-            </div>
-          )}
+          <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
         </div>
 
       {/* Look at the settings to see if we should include the featured image */}
@@ -81,21 +50,9 @@ const Post = ({ state, actions, libraries }) => {
   ) : null;
 };
 
-export default connect(Post);
+export default connect(Page);
 
 const Container = styled.div``;
-
-const Author = styled.span``;
-
-const CategoryName = styled.span`
-  font-size: 16px !important;
-`;
-
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
-
-const DateWrapper = styled.span``;
 
 /**
  * This component is the parent of the `content.rendered` HTML. We can use nested
@@ -265,10 +222,6 @@ const Content = styled.div`
     transition-timing-function: line;
   }
 
-`;
-
-const PublishIn = styled.span`
-  font-size: 16px !important;
 `;
 
 const Title = styled.h2``;

@@ -1,7 +1,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
-import ColorTheme from "./theme";
 
 /**
  * Navigation Component
@@ -24,9 +23,6 @@ const Nav = ({ state }) => (
         );
       })}
     </NavItems>
-            <ColorItems>
-                <ColorTheme/>
-            </ColorItems>
   </NavContainer>
 );
 
@@ -40,7 +36,7 @@ const NavContainer = styled.nav`
   "navitems"
   "coloritems";
   padding: 12px 24px;
-  width: 200px;
+  width: 265px;
   height: calc(100vh - 90px); /* header + footer */
   @media screen and (min-width: 560px) and (max-width: 1024px) {
     height: calc(100vh - 110px); /* header + footer */
@@ -109,8 +105,4 @@ const NavItem = styled.div`
 
 const NavItems = styled.div`
   grid-area: navitems / navitems / navitems / navitems;
-`;
-
-const ColorItems = styled.div`
-  grid-area: coloritems / coloritems / coloritems / coloritems;
 `;

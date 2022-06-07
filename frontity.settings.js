@@ -14,29 +14,25 @@ const settings = {
         "theme": {
           "menu": [
             [
-              "Home",
+              "/mina",
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "/blogi",
+              "/blog"
             ],
             [
-              "Travel",
-              "/category/travel/"
+              "/aihe/ohjelmointi",
+              "/category/ohjelmointi/"
             ],
             [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
+              "/aihe/videopelit",
+              "/category/videopelit/"
             ]
           ],
           "featured": {
             "showOnList": false,
-            "showOnPost": false
+            "showOnPost": true
           }
         }
       }
