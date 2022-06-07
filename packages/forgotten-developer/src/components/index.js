@@ -28,9 +28,12 @@ const Theme = ({ state, actions }) => {
       if (navigator.language || navigator.userLanguage) {
         const lang = navigator.language || navigator.userLanguage;
         if (!lang.includes("fi")) {
+          if (state.router.link.endsWith('#reset-language')) {
+            localStorage.removeItem('lang');
+          }
           if (localStorage.getItem('lang') === 'fi' && state.router.link.startsWith('/en')) {
             actions.router.set("/");
-          } else if (localStorage.getItem('lang') === 'en' && !state.router.link.endsWith('#reset-language')) {
+          } else if (localStorage.getItem('lang') === 'en') {
             window.location = "https://en.raikas.dev";
           } else if (localStorage.getItem('lang') !== 'fi') {
             actions.router.set("/en");
