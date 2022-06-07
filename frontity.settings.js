@@ -2,9 +2,9 @@ const settings = {
   "name": "raikas.dev",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://raikas.dev",
+      "title": "Roni Äikäs",
+      "description": "Roni Äikkään nettisivut ja blogi"
     }
   },
   "packages": [
