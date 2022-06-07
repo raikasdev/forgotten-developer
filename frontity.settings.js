@@ -19,15 +19,15 @@ const settings = {
             ],
             [
               "/blogi",
-              "/blog"
+              "/blogi"
             ],
             [
-              "/aihe/ohjelmointi",
-              "/category/ohjelmointi/"
+              "/blogi/ohjelmointi",
+              "/blogi/ohjelmointi/"
             ],
             [
-              "/aihe/videopelit",
-              "/category/videopelit/"
+              "/blogi/videopelit",
+              "/blogi/videopelit/"
             ]
           ],
           "featured": {
@@ -41,7 +41,9 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://wp.raikas.dev"
+          "url": "https://wp.raikas.dev",
+          "homepage": "mina",
+          "postsPage": "blogi"
         }
       }
     },

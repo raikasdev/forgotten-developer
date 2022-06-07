@@ -12,7 +12,7 @@ const List = ({ state }) => {
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
         <Header>
-          {data.taxonomy}:{" "}
+          {data.taxonomy === 'category' ? 'Aihe' : data.taxonomy}:{" "}
           <b>{decode(state.source[data.taxonomy][data.id].name)}</b>
         </Header>
       )}
@@ -28,7 +28,7 @@ const List = ({ state }) => {
       {data.items.map(({ type, id }) => {
         const item = state.source[type][id];
         // Render one Item component for each one.
-        return <Item key={item.id} item={item} />;
+        return <Item key={item.id} item={item} isTaxonomy={data.isTaxonomy} />;
       })}
       <Pagination />
     </Container>

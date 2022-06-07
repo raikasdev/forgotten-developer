@@ -80,7 +80,7 @@ const Container = css`
 const Main = css`
     #main{
         display: grid;
-        grid-template-columns: 265px 1fr;
+        grid-template-columns: 275px 1fr;
         overflow: hidden;
         @media screen and (max-width: 560px) {
           grid-template-columns: 1fr;

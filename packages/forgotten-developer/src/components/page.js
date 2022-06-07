@@ -10,7 +10,6 @@ const Page = ({ state, actions, libraries }) => {
   // Get the data of the post.
   const post = state.source[data.type][data.id];
 
-  console.log(post);
   // Get the theme color.
   const { themeColor } = state.theme.colors;
 

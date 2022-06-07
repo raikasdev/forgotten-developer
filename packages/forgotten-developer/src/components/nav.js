@@ -36,7 +36,7 @@ const NavContainer = styled.nav`
   "navitems"
   "coloritems";
   padding: 12px 24px;
-  width: 265px;
+  width: 275px;
   height: calc(100vh - 90px); /* header + footer */
   @media screen and (min-width: 560px) and (max-width: 1024px) {
     height: calc(100vh - 110px); /* header + footer */

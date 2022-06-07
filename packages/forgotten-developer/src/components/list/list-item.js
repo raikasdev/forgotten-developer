@@ -11,7 +11,7 @@ import FeaturedMedia from "../featured-media";
  * - Author: name of author and published date
  * - FeaturedMedia: the featured image/video of the post
  */
-const Item = ({ state, item }) => {
+const Item = ({ state, item, isTaxonomy }) => {
   // Get the data of the author.
   const author = state.source.author[item.author];
   // Get the data of the category.
@@ -39,14 +39,15 @@ const Item = ({ state, item }) => {
         <PublishDate>
           Naputeltu <b>{date.toDateString().replace(/^\S+\s/,'')}</b>
         </PublishDate>
-        <PublishIn>
+        { !isTaxonomy && <PublishIn>
           {" aiheesta "}
           <StyledLink link={category.link}>
             <CategoryName>
               <b>{category.name}</b>
             </CategoryName>
           </StyledLink>
-        </PublishIn>
+        </PublishIn> }
+        
       </div>
 
       {/*

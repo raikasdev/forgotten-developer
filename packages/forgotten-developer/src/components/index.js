@@ -23,7 +23,6 @@ import Page from "./page";
 const Theme = ({ state, actions }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  console.log(data);
   useEffect(() => {
     if (navigator != null) {
       if (navigator.language || navigator.userLanguage) {
