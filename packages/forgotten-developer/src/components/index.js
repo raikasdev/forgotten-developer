@@ -50,6 +50,7 @@ const Theme = ({ state, actions }) => {
       <Head>
         <meta name="description" content={state.frontity.description} />
         <html lang="fi" />          
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
 
       
